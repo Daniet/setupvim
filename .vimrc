@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'editorconfig/editorconfig-vim'
 	Plug 'matze/vim-move'
-"	Plug 'xuyuanp/nerdtree-git-plugin'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'nathanaelkane/vim-indent-guides'
@@ -37,37 +36,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
 	Plug 'tveskag/nvim-blame-line'
 	Plug 'mhinz/vim-signify'
-"	Plug 'ajh17/spacegray.vim'
-"	Plug 'KKPMW/sacredforest-vim'
-"	Plug 'dracula/dracula-theme'
-"	Plug 'danilo-augusto/vim-afterglow'
-"	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'https://github.com/Daniet/palenight.vim.git'
 call plug#end()
 
-"let g:dracula_colorterm = 0
-"set background=blue
 colorscheme palenight
-"hi clear Whatever
 let g:palenight_terminal_italics=1
-
-"hi! Normal guibg=NONE 
-"hi! Normal ctermbg=NONE
-
-"let g:afterglow_blackout=0
-"let g:afterglow_italic_comments=1
-"let g:airline_theme='afterglow'
-"colorscheme afterglow
-
-"colorscheme sacredforest
-"let g:lightline = {
-"      \ 'colorscheme': 'sacredforest',
-"			\ }
-
-"let g:spacegray_underline_search = 1
-"let g:spacegray_use_italics = 1
-"let g:spacegray_low_contrast = 1
-"colorscheme spacegray
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
