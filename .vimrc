@@ -37,6 +37,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tveskag/nvim-blame-line'
 	Plug 'mhinz/vim-signify'
 	Plug 'https://github.com/Daniet/palenight.vim.git'
+	Plug 'dart-lang/dart-vim-plugin'
+	Plug 'thosakwe/vim-flutter'
 call plug#end()
 
 colorscheme palenight
