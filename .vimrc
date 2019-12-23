@@ -7,6 +7,7 @@ set ic
 set encoding=UTF-8
 set autoindent
 set mouse=a
+set nobackup
 
 retab
 
@@ -22,31 +23,50 @@ ino {<CR> {<CR>}<ESC>O
 call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'editorconfig/editorconfig-vim'
-	Plug 'matze/vim-move'
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'nathanaelkane/vim-indent-guides'
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'alvan/vim-closetag'
-	Plug 'ap/vim-css-color'
-	Plug 'calviken/vim-gdscript3'
-	Plug 'mattn/emmet-vim'
-	Plug 'leafgarland/typescript-vim'
-	Plug 'manasthakur/vim-commentor'
-	Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
-	Plug 'tveskag/nvim-blame-line'
-	Plug 'mhinz/vim-signify'
-	Plug 'https://github.com/Daniet/palenight.vim.git'
-	Plug 'dart-lang/dart-vim-plugin'
-	Plug 'thosakwe/vim-flutter'
+  Plug 'matze/vim-move'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'alvan/vim-closetag'
+  Plug 'ap/vim-css-color'
+  Plug 'calviken/vim-gdscript3'
+  Plug 'mattn/emmet-vim'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'manasthakur/vim-commentor'
+  Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
+  Plug 'tveskag/nvim-blame-line'
+  Plug 'mhinz/vim-signify'
+  Plug 'https://github.com/Daniet/palenight.vim.git'
+  Plug 'dart-lang/dart-vim-plugin'
+  Plug 'thosakwe/vim-flutter'
+  Plug 'valloric/youcompleteme'
+" Plug 'cjrh/vim-conda'
+  Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 colorscheme palenight
 let g:palenight_terminal_italics=1
 
+" ignore compile
+set wildignore=*.o,*~,*.pyc
+
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 map <C-d> :NERDTreeFocus<CR>
+
+" vim-conda
+"let g:jedi#force_py_version = 2
+"let g:UltisnipsUsePythonVersion = 2
+"let g:conda_startup_msg_suppress = 1
+"let g:conda_startup_msg_suppress = 0
+
+" jedi vim
+let g:jedi#popup_select_first = 0
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " vim move
 let g:move_key_modifier = 'A'
@@ -89,7 +109,6 @@ let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 autocmd FileType typescript :set makeprg=tsc
 
-
 " configuracion pug
 let g:html5_event_handler_attributes_complete = 0 " Disable event-handler attributes
 let g:html5_rdfa_attributes_complete = 0          " Disable RDFa attributes
@@ -107,3 +126,16 @@ let g:netrw_sort_by="FileType"
 " configuracion blame git
 "g:signify_vcs_list
 "h signify-modus-operandi
+
+" Flutter
+
+" Enable Flutter menu
+"call FlutterMenu()
+
+" Some of these key choices were arbitrary;
+" it's just an example.
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
